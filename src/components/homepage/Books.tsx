@@ -3,7 +3,12 @@ import BookCard from "../shared/BookCard";
 import { IBook } from "@/types/books.type";
 
 const getBooks = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
+
+  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || 
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+const res = await fetch(`${baseUrl}/booksData.json`);
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch books");
