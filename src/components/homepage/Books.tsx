@@ -4,10 +4,10 @@ import { IBook } from "@/types/books.type";
 
 const getBooks = async () => {
 
-  const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || 
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  // const baseUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL || 
+  // (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
-const res = await fetch(`${baseUrl}/booksData.json`);
+const res = await fetch('/booksData.json');
   // const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`);
 
   if (!res.ok) {
