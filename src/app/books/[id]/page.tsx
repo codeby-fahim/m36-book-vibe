@@ -83,7 +83,7 @@ const BooksDetailPage = async ({
         </h2>
 
         <p className="mt-3 text-gray-500">
-          We couldnt finds the book youre looking for.
+          We couldnt find the book youre looking for.
         </p>
       </section>
     );
